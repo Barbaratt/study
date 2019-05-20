@@ -5,3 +5,9 @@
 			{
 				include $path."newuser.php";
 			}//
+		#login
+			#new user
+			if(isset($_POST['login']))
+			{
+				include $path."login.php";
+			}//

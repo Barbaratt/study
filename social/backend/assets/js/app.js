@@ -2,7 +2,26 @@ $(document).ready(() => {
     //Login event ->
     $('#login-submit').on('click', e => {
         e.preventDefault();
-        $('#login').addClass('load');
+        //$('#login').addClass('load');
+        $login = $('#user-login').val();
+        $pass = $('#user-pass').val();
+        $.ajax({
+            url: '/api',
+            method: 'POST',
+            data: {
+                    login: true,
+                    email: $login,
+                    pass: $pass,
+                  }
+        }).done(function(msg){
+            $('#new-account').removeClass('load');
+            if(msg=="nofound"){
+                throw new error('Login no found');
+            }
+            if(msg!=''){
+                window.location.href = "/set_session?session="+msg;
+            }//end if
+        });
     });
     //New account event
     $('#new-acount-submit').on('click', e => {
