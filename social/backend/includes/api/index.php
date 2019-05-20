@@ -6,8 +6,12 @@
 				include $path."newuser.php";
 			}//
 		#login
-			#new user
 			if(isset($_POST['login']))
 			{
 				include $path."login.php";
+			}//
+		#lsearch
+			if(isset($_POST['search']))
+			{
+				include $path."search.php";
 			}//
