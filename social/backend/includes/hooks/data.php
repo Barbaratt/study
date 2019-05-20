@@ -4,7 +4,7 @@
 		public $host = "localhost";
 		public $user = "root";
 		public $pass = "root";
-		public $data = "";
+		public $data = "social";
 	}//end class
 	$mysql = new mysql;
 		$con =	mysqli_connect($mysql->host, $mysql->user, $mysql->pass, $mysql->data)or die("Connect error").mysqli_error();

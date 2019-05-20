@@ -1,0 +1,91 @@
+/* Global */
+*{}
+.load{
+    position: relative;
+}
+.load:after{
+    content :'';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #222222d4;
+    z-index: 9999;
+    background-image: url('../image/loads/load.gif');
+    background-size: 67px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* Site Matrix*/
+/* Master Container*/
+.master-container{
+    height: 100vh;
+    background: rgb(50, 50, 50);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0!important;
+}
+/* Sections */
+/* Login */
+#login{
+    min-height: 400px;
+    padding: 10px;
+    background: #fff;
+    max-width: 100%;
+    width: 400px;
+    margin: auto;
+}
+/* New Account */
+#new-account{
+    min-height: 550px;
+    padding: 10px;
+    background: #fff;
+    max-width: 100%;
+    width: 400px;
+    margin: auto;
+}
+#new-account .avatar{
+    width: 150px;
+    height: 150px;
+    background: #000;
+    border-radius: 100%;
+    margin: auto;
+}
+/* Dashboard */
+#dashboard{
+    min-height: 98vh;
+    padding: 10px;
+    background: #fff;
+    max-width: 98vw;
+    width: 98vw;
+    margin: auto;
+}
+#dashboard .nav{
+    min-height: 50px;
+    background: #444;
+    padding: 10px;
+}
+#dashboard .nav #search-input{
+    max-width: 200px;
+}
+#dashboard .nav #profile{
+    max-width: 80px;
+    max-height: 37px;
+}
+#dashboard .nav #logout{
+    max-width: 80px;
+    max-height: 37px;
+}
+#dashboard #panel{
+    min-height: 400px;
+    background: #EEE;
+}
+#dashboard .media-title{
+    background: #444;
+    padding: 7px 0 0px;
+    margin-bottom: 8px;
+    color: #fff;
+}
