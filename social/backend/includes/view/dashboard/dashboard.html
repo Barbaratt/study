@@ -83,7 +83,21 @@
       <!--/.modal-header-->
       <div class="modal-body">
         <div class="tab-content" id="pills-tabContent">
-          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <textarea id="area_editor"></textarea>
+                <link rel="stylesheet" href="assets/jodit/jodit.min.css"/>
+                <link rel="stylesheet" href="assets/jodit/app.css"/>
+
+                <script src="assets/jodit/jodit.min.js"></script>
+                <script src="assets/jodit/prism.js"></script>
+                <script src="assets/jodit/app.js"></script>
+                <script>
+                    var editor = new Jodit('#area_editor', {
+                       //
+                    });
+                </script>
+          </div>
+          <!--/.end blog-->
           <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
           <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
         </div>
