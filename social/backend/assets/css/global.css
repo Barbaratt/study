@@ -17,6 +17,9 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+.container{
+    max-width: 100%!important;    
+}
 /* Site Matrix*/
 /* Master Container*/
 .master-container{
@@ -82,4 +85,21 @@
 #dashboard #upload_file{
     max-width: 80px;
     max-height: 37px;
+}
+
+/* Modal */
+a.active{
+    background-color: #222!important;
+}
+/*
+    Editor
+*/
+.jodit_container:not(.jodit_inline) .jodit_workplace, .jodit_statusbar {
+    background: #fff!important
+    ;
+    border: none!important;
+}
+.jodit_toolbar{
+    border: none!Important;
+    box-shadow: none!important;
 }
