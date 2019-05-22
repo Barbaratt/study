@@ -123,6 +123,51 @@
 a.active{
     background-color: #222!important;
 }
+#open_media .modal-dialog{
+    width: 100%!important;
+    top: 0;
+    margin: auto;
+    background: white;
+    max-width: 100%;
+    min-height: 100%;
+}
+.modal-footer{
+
+}
+.modal-footer .rating{
+
+}
+.modal-footer .quotes{
+    background: #e8e8e8;
+    min-height: 300px;
+}
+.modal-footer textarea, .modal-footer .btn{
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    resize: none;
+    outline: none!important;
+    max-height: 100px;
+}
+.modal-footer .btn{
+    padding: 37px 0;
+}
+.rating_sticks{
+    list-style-type: none;
+}
+.rating_sticks li{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: #505050;
+    border-radius: 50%;
+    transition: 0.5s all;
+    cursor: pointer;
+}
+.rating_sticks li:hover{
+    background: #0cc33b;   
+}
 /*
     Editor
 */

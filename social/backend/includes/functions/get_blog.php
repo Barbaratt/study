@@ -8,7 +8,7 @@
 		$media_return = mysqli_query($con, "SELECT * FROM `blogs` WHERE `id`='$media'")or die("We got a problem, try into some minutes").mysqli_error();
 		while ($row_=mysqli_fetch_array($media_return))
 			{ ?>
-				<div class="title"><?php echo $row_['title']; ?></div> 
+				<div class="title"><h2><?php echo $row_['title']; ?></h2></div> 
 				<!--/.title-->	
 				<div class="content"><?php echo $row_['content']; ?></div> 
 				<!--/.content-->
