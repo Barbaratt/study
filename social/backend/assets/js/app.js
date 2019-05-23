@@ -3,6 +3,8 @@ function open_blog(){
     $('.open-media').click(function(){
         //set toggle class
         $('body').addClass('load');
+        //get style
+        $style = $(this).attr('style');
         //get the media path
         $media = $(this).attr("open-blog");
         $type = $(this).attr("type");
@@ -16,10 +18,16 @@ function open_blog(){
                   }
         //ajax success
         }).done(function(msg){
-            //remove load
             $content = $(msg).find('.content');
-            $('body').removeClass('load');
             $('#get_blog').html(msg);
+            //add style
+            $('#open_media').find('.title').attr('style', $style);
+            //load remove
+            $('body').removeClass('load');
+            // $content_return = $(msg);
+            // $content_thumbnail = $content_return[];
+            // $content_title = $content_return[4];
+            // $content_content = $content_return[8];
         });//end done
     });//end on click
 }
@@ -127,17 +135,21 @@ $(document).ready(() => {
         {
            $tags+= $('.taggle_text').eq(i).text()+", ";
         }
+        var formData = new FormData();
+        formData.append('new_blog', true);
+        formData.append('user', $('#dashboard').attr('user'));
+        formData.append('title', $('#blog_title').val());
+        formData.append('blog_content', $('#blog_editor').val());
+        formData.append('tags', $tags);
+        formData.append('thumbnail', $('#blog_thumbnail').prop('files')[0]);
         //call ajax to api
         $.ajax({
             url: '/api',
             method: 'POST',
-            data: {
-                    new_blog: true,
-                    user: $('#dashboard').attr('user'),
-                    title: $('#blog_title').val(),
-                    blog_content: $('#blog_editor').val(),
-                    tags: $tags,
-                  }
+            data: formData,
+                  cache: false,
+                    contentType: false,
+                    processData: false,
         //if done
         }).done(function(msg){
             //clear pupup fields
@@ -148,8 +160,14 @@ $(document).ready(() => {
             var editor = new Jodit('#blog_editor', { });
             //remove loadclass and hide popup
             setTimeout(() => {$('body').removeClass('load'); $('#upload_file').click(); }, 3000);
+            $('.set-thumbnail').css('background', "url('assets/image/new-blog/noimage.png')");
         });//end dome
     });//end click
+    // #Blog new image
+    $('#blog_thumbnail').change(function(e){
+        e.src = URL.createObjectURL(event.target.files[0]);
+        $('.set-thumbnail').css('background', 'url("'+e.src+'")');
+    });
     
 
 

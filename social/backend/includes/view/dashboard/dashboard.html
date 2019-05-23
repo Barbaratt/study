@@ -1,5 +1,5 @@
       <section id="dashboard" user="<?php echo $_COOKIE['session']; ?>">
-        <div class="container">
+        <div class="container p-0">
           <div class="row">
             <div class="col-12">
                 <!-- DASHBOARD BODY -->
@@ -65,11 +65,17 @@
             <div class="container">
               <div class="row">
                 <div class="col-12">
-                  <input class="text-center" type="text" id="blog_title" placeholder="Title" />
+                  <input class="text-center" type="text" id="blog_title" placeholder="Title" /> 
                 </div> 
                 <!--/.col-12-->
-                <div class="col-12 text-center">
-                  <p class="">Blog Thumbnail</p>
+                <label for="blog_thumbnail">
+                  <div class="set-thumbnail" style="background: url('assets/image/new-blog/noimage.png')"></div> 
+                </label>
+                <!--/. label-->
+                  <form action="#" enctype="multipart/form-data" class="d-none">
+                    <input type="file" class="" id="blog_thumbnail" name="blog_thumbnail" />
+                  </form>
+                  <!--/.set-thumbnail-->
                   <input type="file"  class="d-none" />
                 </div> 
                 <!--/.col-12-->
@@ -169,7 +175,7 @@
 <div class="modal fade" id="open_media" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header sticky-top bg-light">
         <a href="#" class="btn btn-dark text-light" data-toggle="modal" data-target="#open_media">X</a>
       </div>
       <!--/.modal-header-->
